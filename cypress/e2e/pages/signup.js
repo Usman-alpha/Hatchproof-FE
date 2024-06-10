@@ -3,11 +3,15 @@ import { faker } from '@faker-js/faker'
 export class SignUp{
     //Locators
     signup_link= 'a > span'
-    fullname_locator= ':nth-child(1) > .process_input'
-    email_locator= ':nth-child(2) > .process_input'
-    passowrd_locator= '.input-group-merge > .form-control'
+    fullname_locator= "input[name='name']"
+    // ':nth-child(1) > .process_input'
+    email_locator= "input[name='email']"
+    // ':nth-child(2) > .process_input'
+    passowrd_locator= "input[name='password']"
+    // '.input-group-merge > .form-control'
     pwd_show_hide_locator= '.cursor-pointer'
-    submitBtn_locator= '.process-btn'
+    submitBtn_locator= "button[type='submit']"
+    
 
     //Functions
     // gotoSignup(){
@@ -34,5 +38,4 @@ export class SignUp{
     submitRequest(){
         cy.get(this.submitBtn_locator).click()
     }
-
 }
