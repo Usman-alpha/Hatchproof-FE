@@ -8,7 +8,7 @@ Cypress.Commands.add('login', (email, password) => {
         const url= 'https://uat.hatchproof.com/login'
         cy.visit(url);
         cy.hold()
-        cy.get("input[name='loginEmail']").should('be.visible')
+        cy.get("input[name='loginEmail']", {timeout: 3000}).should('be.visible')
             .type(email)
             cy.hold()
         cy.get("input[placeholder^='Enter']")
