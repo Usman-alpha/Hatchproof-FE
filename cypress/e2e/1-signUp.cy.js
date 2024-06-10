@@ -25,7 +25,6 @@ describe('Hatchproof UAT signup test suite.', () => {
         SignUpObj.pwd(pwdVall)
         SignUpObj.submitRequest()
         cy.wait(3000)
-
     })
     it('Enter valid credentials and submit regestration.', () => {
         SignUpObj.fullname()

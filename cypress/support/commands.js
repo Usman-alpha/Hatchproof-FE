@@ -7,13 +7,14 @@ Cypress.Commands.add('login', (email, password) => {
     cy.session('loginState', () => {
         const url= 'https://uat.hatchproof.com/login'
         cy.visit(url);
-        cy.get('.process_input', { timeout: 10000 }).should('be.visible')
+        cy.hold()
+        cy.get("input[name='loginEmail']").should('be.visible')
             .type(email)
             cy.hold()
-        cy.get('.input-group-merge > .form-control')
+        cy.get("input[placeholder^='Enter']")
             .type(password)
             cy.hold()
-        cy.get('.process-btn')
+        cy.get("button[type='submit']")
             .click();
 
                 const loginState = {
